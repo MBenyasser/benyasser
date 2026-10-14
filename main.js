@@ -5,11 +5,11 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 
   // Renders a video, or a placeholder box while `src` is empty.
-  function media(item, { autoplay = false } = {}) {
+  function media(item, { autoplay = false, ratio = "9:16" } = {}) {
     if (!item.src) {
       const ph = document.createElement("div");
       ph.className = "placeholder";
-      ph.innerHTML = `<span class="play">▶</span><span>${item.label || item.title}</span><small>9:16 video placeholder</small>`;
+      ph.innerHTML = `<span class="play">▶</span><span>${item.label || item.title}</span><small>${ratio} video placeholder</small>`;
       return ph;
     }
     const v = document.createElement("video");
@@ -30,7 +30,7 @@
 
   // Hero showreel
   const hero = document.querySelector('[data-video="showreel"]');
-  hero.appendChild(media(S.showreel, { autoplay: true }));
+  hero.appendChild(media(S.showreel, { autoplay: true, ratio: "16:9" }));
   if (S.showreel.src) {
     const btn = document.createElement("button");
     btn.className = "sound";
@@ -43,18 +43,25 @@
     hero.appendChild(btn);
   }
 
-  // Work carousel
-  const track = document.getElementById("carousel");
-  S.work.forEach(item => {
-    const card = document.createElement("article");
-    card.className = "card";
+  function card(item, ratio) {
+    const el = document.createElement("article");
+    el.className = "card";
     const frame = document.createElement("div");
-    frame.className = "frame";
-    frame.appendChild(media(item));
-    card.appendChild(frame);
-    card.insertAdjacentHTML("beforeend", `<h3>${item.title}</h3><p class="tag">${item.tag}</p>`);
-    track.appendChild(card);
-  });
+    frame.className = ratio === "16:9" ? "frame wide" : "frame";
+    frame.appendChild(media(item, { ratio }));
+    el.appendChild(frame);
+    const link = item.link ? ` · <a href="${item.link}" target="_blank" rel="noopener">Watch full video ↗</a>` : "";
+    el.insertAdjacentHTML("beforeend", `<h3>${item.title}</h3><p class="tag">${item.tag}${link}</p>`);
+    return el;
+  }
+
+  // Long-form grid
+  const long = document.getElementById("long");
+  S.long.forEach(item => long.appendChild(card(item, "16:9")));
+
+  // Short-form carousel
+  const track = document.getElementById("carousel");
+  S.short.forEach(item => track.appendChild(card(item, "9:16")));
 
   // Only one video plays at a time
   document.addEventListener("play", e => {
