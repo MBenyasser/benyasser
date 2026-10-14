@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muhammad Yasser — Short-Form Video Editor</title>
+  <meta name="description" content="Short-form video editor for creators and brands. Motion graphics, retention-first reels, split-screen explainers.">
+  <meta property="og:title" content="Muhammad Yasser — Short-Form Video Editor">
+  <meta property="og:description" content="Retention-first reels with motion graphics that follow the script.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ HERO (above the fold) ============ -->
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="brand"><span class="dot"></span>Muhammad Yasser</p>
+      <h1>Reels that keep people <em>watching</em> to the last second.</h1>
+      <p class="sub">I edit short-form for creators and brands — motion graphics that follow every word of the script, built in After Effects and finished in Resolve.</p>
+      <div class="cta-row">
+        <a class="btn" data-email href="#">Email me about your project</a>
+        <a class="link" href="#work">See the work ↓</a>
+      </div>
+      <p class="reply">Replies within 24 hours.</p>
+    </div>
+
+    <div class="hero-reel">
+      <div class="frame" data-video="showreel"></div>
+    </div>
+  </header>
+
+  <!-- ============ WORK (4–8 videos, carousel) ============ -->
+  <section id="work" class="section">
+    <div class="section-head">
+      <h2>Selected work</h2>
+      <div class="arrows">
+        <button class="arrow" data-dir="-1" aria-label="Previous">←</button>
+        <button class="arrow" data-dir="1" aria-label="Next">→</button>
+      </div>
+    </div>
+    <div class="carousel" id="carousel"></div>
+  </section>
+
+  <!-- ============ SOCIAL PROOF ============ -->
+  <section class="section">
+    <h2>What clients say</h2>
+    <div class="quotes" id="quotes"></div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="section final">
+    <h2>Got footage sitting on a drive?</h2>
+    <p class="sub">Send me a link and what it's for. I'll tell you how I'd cut it.</p>
+    <a class="btn" data-email href="#">Email me about your project</a>
+  </section>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Muhammad Yasser</span>
+    <span class="socials" id="socials"></span>
+  </footer>
+
+  <script src="content.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
