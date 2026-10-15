@@ -49,6 +49,7 @@
     const frame = document.createElement("div");
     frame.className = ratio === "16:9" ? "frame wide" : "frame";
     frame.appendChild(media(item, { ratio }));
+    if (item.badge) frame.insertAdjacentHTML("beforeend", `<span class="badge">${item.badge}</span>`);
     el.appendChild(frame);
     const link = item.link ? ` · <a href="${item.link}" target="_blank" rel="noopener">Watch full video ↗</a>` : "";
     el.insertAdjacentHTML("beforeend", `<h3>${item.title}</h3><p class="tag">${item.tag}${link}</p>`);
@@ -80,8 +81,9 @@
   // Testimonials
   const quotes = document.getElementById("quotes");
   S.testimonials.forEach(t => {
+    const draft = t.approved ? "" : `<span class="draft">Draft — awaiting client approval</span>`;
     quotes.insertAdjacentHTML("beforeend",
-      `<figure class="quote"><blockquote>“${t.quote}”</blockquote><figcaption><strong>${t.name}</strong><span>${t.role}</span></figcaption></figure>`);
+      `<figure class="quote${t.approved ? "" : " is-draft"}">${draft}<blockquote>“${t.quote}”</blockquote><figcaption><strong>${t.name}</strong><span>${t.role}</span></figcaption></figure>`);
   });
 
   // Socials (hidden until a URL is set)
