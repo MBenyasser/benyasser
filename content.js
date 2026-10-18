@@ -26,7 +26,7 @@ window.SITE = {
     { title: "Hyaluronic acid serums", tag: "DTC ad · Skincare", badge: "DTC ad", src: "media/ad-hyaluronic-serums.mp4", poster: "media/ad-hyaluronic-serums.jpg" },
     { title: "Retinol, explained", tag: "DTC ad · Skincare", badge: "DTC ad", src: "media/ad-retinol.mp4", poster: "media/ad-retinol.jpg" },
     { title: "Video-marketing agency reel", tag: "Viral editing · Promo", badge: "Viral editing", src: "media/viral-agency-promo.mp4", poster: "media/viral-agency-promo.jpg" },
-    { title: "AI tool tutorial short", tag: "Viral editing · YouTube Shorts", badge: "Viral editing", src: "media/viral-ai-tutorial.mp4", poster: "media/viral-ai-tutorial.jpg" }
+    { title: "3 things from beginner to pro", tag: "Viral editing · Motion graphics", badge: "Viral editing", src: "media/viral-three-things.mp4", poster: "media/viral-three-things.jpg" }
   ],
 
   // Client-approved quotes. For a new one, add it with `approved: false` (shows a
