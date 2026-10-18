@@ -18,7 +18,7 @@ window.SITE = {
   long: [
     { title: "7 mistakes small accounts make", tag: "YouTube · Creator education", badge: "Highlights", src: "media/long-small-account-mistakes.mp4", poster: "media/long-small-account-mistakes.jpg", link: "" },
     { title: "30 days of content in 60 minutes", tag: "YouTube · Creator education", badge: "Highlights", src: "media/long-30-days-of-content.mp4", poster: "media/long-30-days-of-content.jpg", link: "" },
-    { title: "Why Coca-Cola left the Arab world for 25 years", tag: "YouTube · Documentary (Arabic)", badge: "Documentary · Highlights", src: "media/long-coca-cola-documentary.mp4", poster: "media/long-coca-cola-documentary.jpg", link: "" }
+    { title: "The man they tried to kill three times in one night", tag: "YouTube · Documentary (Arabic)", badge: "Documentary · Highlights", src: "media/long-rasputin-documentary.mp4", poster: "media/long-rasputin-documentary.jpg", link: "" }
   ],
 
   // Short-form (9:16): 3–5 videos.
