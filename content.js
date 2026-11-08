@@ -8,11 +8,10 @@ window.SITE = {
   email: "mbenyasser74@gmail.com",
   emailSubject: "Video editing project",
 
-  // 16:9 showreel (built in After Effects: Showreel/AE/build_v05.jsx).
-  // MUSIC IS UNLICENSED — swap to a licensed track before publishing.
+  // 16:9 showreel v08 (built in Remotion: Showreel/remotion, kinetic grid).
+  // Music: Metro Boomin "Walk Em Down" (instrumental), UNLICENSED.
   showreel: { src: "media/showreel.mp4", poster: "media/showreel.jpg", label: "Showreel" },
 
-  // Keep long + short between 4 and 8 in total (Hick's law).
   // Long-form (16:9): 2–3 videos. Use a 60–90s highlight cut, not the full video,
   // and add `link` to the full upload on YouTube if you like.
   long: [
@@ -21,10 +20,17 @@ window.SITE = {
     { title: "The man they tried to kill three times in one night", tag: "YouTube · Documentary (Arabic)", badge: "Documentary · Highlights", src: "media/long-rasputin-documentary.mp4", poster: "media/long-rasputin-documentary.jpg", link: "" }
   ],
 
-  // Short-form (9:16): 3–5 videos.
+  // DTC ads (9:16, or set ratio: "4:5"): the latest five ad edits.
+  dtc: [
+    { title: "Derm stitch: street interview", tag: "DTC ad · Skincare", badge: "DTC ad", src: "media/ad-derm-stitch.mp4", poster: "media/ad-derm-stitch.jpg" },
+    { title: "Crepey skin and retinol", tag: "DTC ad · Skincare", badge: "DTC ad", src: "media/ad-crepey-skin.mp4", poster: "media/ad-crepey-skin.jpg" },
+    { title: "Knee pain, explained", tag: "DTC ad · Knee brace · Lebanese Arabic", badge: "DTC ad · Arabic", ratio: "4:5", src: "media/ad-knee-brace-arabic.mp4", poster: "media/ad-knee-brace-arabic.jpg" },
+    { title: "Too late for anything but injections?", tag: "DTC ad · Skincare", badge: "DTC ad", src: "media/ad-too-late-for-retinol.mp4", poster: "media/ad-too-late-for-retinol.jpg" },
+    { title: "Before you start retinol", tag: "DTC ad · Skincare", badge: "DTC ad", src: "media/ad-before-retinol.mp4", poster: "media/ad-before-retinol.jpg" }
+  ],
+
+  // Short-form (9:16).
   short: [
-    { title: "Hyaluronic acid serums", tag: "DTC ad · Skincare", badge: "DTC ad", src: "media/ad-hyaluronic-serums.mp4", poster: "media/ad-hyaluronic-serums.jpg" },
-    { title: "Retinol, explained", tag: "DTC ad · Skincare", badge: "DTC ad", src: "media/ad-retinol.mp4", poster: "media/ad-retinol.jpg" },
     { title: "Video-marketing agency reel", tag: "Viral editing · Promo", badge: "Viral editing", src: "media/viral-agency-promo.mp4", poster: "media/viral-agency-promo.jpg" },
     { title: "3 things from beginner to pro", tag: "Viral editing · Motion graphics", badge: "Viral editing", src: "media/viral-three-things.mp4", poster: "media/viral-three-things.jpg" }
   ],

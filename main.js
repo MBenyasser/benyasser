@@ -47,7 +47,7 @@
     const el = document.createElement("article");
     el.className = "card";
     const frame = document.createElement("div");
-    frame.className = ratio === "16:9" ? "frame wide" : "frame";
+    frame.className = ratio === "16:9" ? "frame wide" : ratio === "4:5" ? "frame four-five" : "frame";
     frame.appendChild(media(item, { ratio }));
     if (item.badge) frame.insertAdjacentHTML("beforeend", `<span class="badge">${item.badge}</span>`);
     el.appendChild(frame);
@@ -60,9 +60,11 @@
   const long = document.getElementById("long");
   S.long.forEach(item => long.appendChild(card(item, "16:9")));
 
-  // Short-form carousel
-  const track = document.getElementById("carousel");
-  S.short.forEach(item => track.appendChild(card(item, "9:16")));
+  // DTC ads + short-form carousels (an item can set `ratio: "4:5"`)
+  [["dtc", S.dtc], ["short", S.short]].forEach(([id, items]) => {
+    const track = document.getElementById(id);
+    items.forEach(item => track.appendChild(card(item, item.ratio || "9:16")));
+  });
 
   // Only one video plays at a time
   document.addEventListener("play", e => {
@@ -73,6 +75,7 @@
 
   document.querySelectorAll(".arrow").forEach(b => {
     b.onclick = () => {
+      const track = document.getElementById(b.parentElement.dataset.target);
       const step = track.querySelector(".card").offsetWidth + 20;
       track.scrollBy({ left: step * Number(b.dataset.dir), behavior: "smooth" });
     };
